@@ -11410,7 +11410,7 @@ header.masthead {
   padding-bottom: 6rem;
   text-align: center;
   color: #fff;
-  background-image: url("../assets/img/header-bg.jpg");
+  background-image: url("../assets/img/background.png");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -11720,7 +11720,7 @@ header.masthead .masthead-heading {
 
 section#contact {
   background-color: #212529;
-  background-image: url("../assets/img/map-image.png");
+  background-image: url("<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.2367837099396!2d125.53314434983487!3d8.950315792650521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3301c043737c1015%3A0x31f73e1ed03135cb!2sMotoracer%20Trading!5e0!3m2!1sen!2sph!4v1675158061079!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>");
   background-repeat: no-repeat;
   background-position: center;
 }
