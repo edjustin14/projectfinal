@@ -6,7 +6,16 @@
     </x-slot>
 
     <div class="py-12">
-        
+      @if (session('status'))
+       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-8">
+            <div class="p-6 text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg" role="alert">
+              <span class ="font-medium">Successful alert!</span> {{session('status')}}
+            </div>
+
+        </div>
+    </div>
+    @endif
+
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
@@ -14,9 +23,13 @@
                   <h2 class="float-left">
                   {{ $header }}
                  </h2>  
-
-                  <button class="float-right rounded-full bg-sky-500 p-1 hover:bg-yellow-700">Add Users</button>
-                    <table class="table-auto w-full">
+                  <a href="{{ url('/users/add')}}">
+                
+                    <button class="float-right rounded-full bg-sky-500 p-1 hover:bg-yellow-700">Add Users</button>
+                
+                  </a>
+                    
+                  <table class="table-auto w-full">
                         <thead>
                           <tr>
                             <th>Name</th>
@@ -31,7 +44,11 @@
                             <td>{{$user->name}}</td>
                             <td class="text-center">{{$user->email}}</td>                        
                             <td class="text-center">
-                              <button class="rounded-full bg-sky-500 p-1 hover:bg-yellow-700">Update</button>
+                              <a href="{{ url('/user/update') }}">
+                              
+                                <button class="rounded-full bg-sky-500 p-1 hover:bg-yellow-700">Update</button>
+                              </a>
+                              
                               <button class="rounded-full bg-sky-500 p-1 hover:bg-yellow-700">Delete</button>
                             
                             </td>                         

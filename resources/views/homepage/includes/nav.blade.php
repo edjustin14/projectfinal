@@ -1,4 +1,22 @@
- <!-- Navigation-->
+
+ <div class="news-container">
+<div class="title">
+        Announcement
+</div>
+
+<ul>
+    @foreach ($sliders as $slidersItem)
+    <li>
+        {{$sliderItem->title}}
+    </li>
+    @endforeach
+    </ul>
+
+</div>  
+<br>
+
+<br> 
+
  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
         <a class="navbar-brand" href="#page-top"><img src="assets/img/logo.png" alt="..." /></a>

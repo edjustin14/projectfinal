@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rules;
 
 class Usercontroller extends Controller
 {
@@ -38,11 +39,24 @@ class Usercontroller extends Controller
      */
     public function store(Request $request)
     {
+        //for validation
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
+            'password' => ['required', Rules\Password::defaults()],
+        ]);
+
+        //for storing after validation
         User::create([
             'name' => $request ->name,
             'email' => $request ->email,
-            'password' => $request -> psasword, 
+            'password' => Hash::make($request->password),
         ]);
+
+        session()->flash('status', 'Added User Succesfully!');
+
+        //redirect to the list of users
+        return redirect('/users');
     }
 
     /**
@@ -53,7 +67,8 @@ class Usercontroller extends Controller
      */
     public function show($id)
     {
-        //
+       //
+
     }
 
     /**

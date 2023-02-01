@@ -2,7 +2,10 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
+use App\Http\Controller\Admin\SliderController;
+use App\Http\Controller\Admin\CarouselController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Slider;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +19,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('homepage');
+    $sliders = Slider ::all(); 
+    return view('homepage',['sliders' => $sliders]);
 });
 
 Route::get('/dashboard', function () {
@@ -33,8 +37,29 @@ Route::get('/users/add', [UserController::class, 'form'] )
 Route::post('/users/add', [UserController::class, 'store'] )
         ->middleware(['auth', 'verified']);
 
-
-
+        Route::post('/users/update/', [UserController::class, 'update'])
+        ->middleware(['auth', 'verified']);
+    
+    Route::get('/users/delete/', [UserController::class, 'delete'])
+        ->middleware(['auth', 'verified']);   
+        Route::get('/sliders', [SliderController::class, 'index'])
+        ->middleware(['auth', 'verified'])
+        ->name('sliders');
+    Route::get('/sliders/create', [SliderController::class, 'create'])
+        ->middleware(['auth', 'verified'])
+        ->name('create');    
+    Route::post('/sliders/create', [SliderController::class, 'store'])
+        ->middleware(['auth', 'verified'])
+        ->name('create');
+    Route::get('/sliders/{slider}/edit', [SliderController::class, 'edit'])
+        ->middleware(['auth', 'verified'])
+        ->name('edit');
+    Route::put('/sliders/{slider}', [SliderController::class, 'update'])
+        ->middleware(['auth', 'verified'])
+        ->name('update');
+    Route::get('/sliders/{slider}/delete', [SliderController::class, 'destroy'])
+        ->middleware(['auth', 'verified'])
+        ->name('destroy');
 
 
 Route::middleware('auth')->group(function () {
