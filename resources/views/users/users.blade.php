@@ -15,7 +15,7 @@
                   {{ $header }}
                  </h2>  
 
-                  <button class="float-right rounded-full bg-sky-500 p-1 hover: bg-sky-700">Add Users</button>
+                  <button class="float-right rounded-full bg-sky-500 p-1 hover:bg-yellow-700">Add Users</button>
                     <table class="table-auto w-full">
                         <thead>
                           <tr>
@@ -31,8 +31,8 @@
                             <td>{{$user->name}}</td>
                             <td class="text-center">{{$user->email}}</td>                        
                             <td class="text-center">
-                              <button class="rounded-full bg-sky-500 p-1 hover:bg-sky-700">Update</button>
-                              <button class="rounded-full bg-sky-500 p-1 hover:bg-sky-700">Delete</button>
+                              <button class="rounded-full bg-sky-500 p-1 hover:bg-yellow-700">Update</button>
+                              <button class="rounded-full bg-sky-500 p-1 hover:bg-yellow-700">Delete</button>
                             
                             </td>                         
                           @endforeach

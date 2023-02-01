@@ -15,12 +15,20 @@ class Usercontroller extends Controller
      */
     public function index()
     {
-        //
-       
-        return view('users', [
+      
+        return view('users.users', [
         'header' => 'Users Management',   
         'users'  => User::all()]);
-    }
+    }   //
+    
+    public function form()
+    {
+      
+        return view('users.form', [
+            'header' => 'Add User'
+        ]);
+    }   //
+      
 
     /**
      * Store a newly created resource in storage.
@@ -30,7 +38,11 @@ class Usercontroller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        User::create([
+            'name' => $request ->name,
+            'email' => $request ->email,
+            'password' => $request -> psasword, 
+        ]);
     }
 
     /**

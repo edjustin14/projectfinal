@@ -9,9 +9,8 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                 <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="#team">Map</a></li>
+                <li class="nav-item"><a class="nav-link" href="#portfolio">Product</a></li>
+                <li class="nav-item"><a class="nav-link" href="#team">Location</a></li>
                 <li class="nav-item"><a class="btn btn-light" href="{{ url('/login')}}">Login</a></li>
                 
             </ul>
